@@ -1,5 +1,5 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 .anim img{
   animation: animate 0.5s ease-out;
 }
@@ -21,7 +21,8 @@
 }
 
 /* h2{ font-family: 'Poppins', serif !important;} */
-h2{ font-family: 'Bitter', serif !important; padding-bottom: 2px;}
+/* h2{ font-family: 'Bitter', serif !important; padding-bottom: 2px;} */
+h2,h5, p{ font-family:'Raleway', sans-serif !important; padding-bottom: 2px;}
 
 input:focus, select:hover {
     color: #212529;
@@ -65,7 +66,6 @@ a {
 
 svg{ display: inline-block;}
 
-
 @layer base{
 
   html,
@@ -95,7 +95,7 @@ svg{ display: inline-block;}
     @apply py-2 pl-2 mt-1 text-white;
   }
 
-  footer a, footer p, footer span{ @apply font-light text-lg; }
+  footer a, footer p, footer span{ @apply font-light text-sm; }
   footer h3{ @apply font-medium;}
 
   footer span{
@@ -118,6 +118,34 @@ svg{ display: inline-block;}
   input, select{
     @apply appearance-none border rounded w-full leading-tight focus:outline-none;
   }
+
+
+  .aboutTeam{
+    @apply w-[90%] sm:w-[340px]  overflow-hidden pb-3 rounded-lg;
+  }
+
+  .aboutTeam h5{
+    @apply font-normal mt-2 text-xl px-2 text-center pt-2 pb-1;
+  }
+
+  .teamImage{
+    @apply flex mx-auto rounded-full overflow-hidden justify-center h-[260px] w-[260px];
+  }
+
+  .aboutTeam p{
+    @apply text-base font-light px-2 text-justify;
+  }
+
+  .aboutTeam div img{
+    @apply w-full object-center object-cover;
+  }
+
+
+  .consulting{
+    @apply min-h-[400px] bg-blue-500 flex flex-col justify-center items-center mt-5 py-6 text-center;
+  }
+  .consulting h2{ @apply text-4xl font-bold w-[900px] max-w-[96%];}
+  .consulting p{ @apply text-lg w-[800px] max-w-[90%] pt-2;}
 
   
 
