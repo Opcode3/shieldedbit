@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function header() {
+export default function header({color = 'black'}) {
   const [burgerToggle, setBurgerToggle] = useState(false);
   const [isUser, setIsUser] = useState(false);
   return (
-    <header className="w-full bg-black overflow-hidden md:overflow-visible md:top-0 relative md:fixed z-20 px-[2%] md:px-[3%] lg:px-[6%] min-h-[80px]">
+    <header className={`w-full ${ color == 'white'? 'bg-white' : 'bg-black'} overflow-hidden md:overflow-visible md:top-0 relative md:fixed z-20 px-[2%] md:px-[3%] lg:px-[6%] min-h-[80px]`}>
             <div className="w-full md:w-fit min-h-[80px] grid grid-cols-1 md:flex items-center float-left">
                 <div className=" w-full md:w-fit flex justify-between items-center">
                     <img src='/assets/images/logo-white.png' className="w-20" alt="shieldedbit logo"/>
@@ -21,7 +21,7 @@ export default function header() {
                         <li className="dropdown_item">
                             <button className="text-sm flex w-full m-0 px-[10px] lg:px-4 py-2 items-center justify-between font-light text-white hover:text-gray-100">Services <span className="caret"></span> </button>
                             <ul className="dropdown md:bg-black">
-                                <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Learn IT Skill</a></Link> </li>
+                                <li> <Link href="/login"><a className="text-sm font-light text-black px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Learn IT Skill</a></Link> </li>
                                 <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Consultancy</a></Link> </li>
                                 <li> <Link href="/services"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">All Services</a></Link> </li>
                             </ul>

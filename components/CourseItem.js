@@ -4,7 +4,8 @@ import Rating from "./rating";
 
 export default function CourseItem() {
   return (
-    <Link href=""><a>
+    // <Link href={{ pathname:'courses', query: {id: 1} }} ><a>
+    <Link href={`/courses/${120}`} ><a>
         <div className="w-full h-fit rounded overflow-hidden" >
             <img src='/assets/images/slider/course.jpg' className="h-full object-cover object-center" alt=''/>
         </div>
