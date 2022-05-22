@@ -8,10 +8,12 @@ import FaqItem from "../components/faqItem";
 export default function Faqs() {
 
   const faqs_data = [
-    {id: 1, headline:'headline 1', description:'description 1'},
-    {id: 2, headline:'headline 2 ', description:'description 2'},
-    {id: 3, headline:'headline 3', description:'description 3'},
-    {id: 4, headline:'headline 4', description:'description 4'}
+    {id: 1, headline:'What should I do when I need help?', description:'The easiest way to reach us is to “Chat Support” under the contact section of the app. You can also send an email to support@shieldedbit.com'},
+    {id: 2, headline:'What should I do when I need help?', description:'The easiest way to reach us is to “Chat Support” under the contact section of the app. You can also send an email to support@shieldedbit.com'},
+    {id: 3, headline:'What should I do when I need help?', description:'The easiest way to reach us is to “Chat Support” under the contact section of the app. You can also send an email to support@shieldedbit.com'},
+    {id: 4, headline:'What should I do when I need help?', description:'The easiest way to reach us is to “Chat Support” under the contact section of the app. You can also send an email to support@shieldedbit.com'},
+    {id: 5, headline:'What should I do when I need help?', description:'The easiest way to reach us is to “Chat Support” under the contact section of the app. You can also send an email to support@shieldedbit.com'},
+  
   ]
   return (
     <>
@@ -20,10 +22,10 @@ export default function Faqs() {
       </Head>
       <Header />
       <main className="md:mt-[80px]">
-          <Pagetitle page='FAQs' description='Frequently Asked Questions' />
-        <div className="min-h-[40vh] pb-24">
+          <Pagetitle page='FAQs' description="We’ve got answers to your questions."/>
+        <div className="min-h-[40vh] pb-12 pt-2 sm:pt-6">
 
-            <ul className=" w-[800px] mt-7 mx-auto">
+            <ul className=" max-w-[98%] w-[800px] mt-7 mx-auto">
               {
                 faqs_data.map( faq => <FaqItem dataSet={faq} key={faq.id} />)
               }
