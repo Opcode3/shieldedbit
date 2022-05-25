@@ -6,7 +6,7 @@ import Consulting from "../../components/consulting";
 import serviceDB from '../../locals/services';
 import TopicList from "../../components/topicList";
 
-export default function index() {
+export default function Index() {
   const router = useRouter();
   const { title } = router.query;
 

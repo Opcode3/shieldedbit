@@ -61,7 +61,7 @@ export default function About() {
               
               {
                 teamInfo.map(
-                  (memberInfo, index) => <Team id={index} data={memberInfo} />
+                  (memberInfo, index) => <Team key={index} data={memberInfo} />
                 )
               }
 

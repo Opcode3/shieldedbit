@@ -11,7 +11,7 @@ import Reviews from "../../components/reviews";
 import AboutInstructor from "../../components/aboutInstructor";
 
 
-export default function index() {
+export default function Index() {
   const router = useRouter();
   const [tab, setTab] = useState(0);
   const { id } = router.query;
@@ -42,7 +42,7 @@ export default function index() {
                 <div>
                     <div className="border-b">
                       <ul className="sm:flex gap-x-3">
-                        <li className="inline-block py-2 ml-2 sm:ml-0"> <button onClick={() => setTab(0)} className={`${tab==0 && 'border-b-2 border-black'} hover:text-black text-sm text-gray-800 py-2 pl-1 pr-1`}>What you'll learn</button> </li>
+                        <li className="inline-block py-2 ml-2 sm:ml-0"> <button onClick={() => setTab(0)} className={`${tab==0 && 'border-b-2 border-black'} hover:text-black text-sm text-gray-800 py-2 pl-1 pr-1`}>What you&lsquo;ll learn</button> </li>
                         <li className="inline-block py-2 ml-2 sm:ml-0"> <button onClick={() => setTab(1)} className={`${tab==1 && 'border-b-2 border-black'} hover:text-black text-sm text-gray-800 py-2 pl-1 pr-1`}>Course content</button> </li>
                         <li className="inline-block py-2 ml-2 sm:ml-0"> <button onClick={() => setTab(2)} className={`${tab==2 && 'border-b-2 border-black'} hover:text-black text-sm text-gray-800 py-2 pl-1 pr-1`}>Reviews</button> </li>
                         <li className="inline-block py-2 ml-2 sm:ml-0"> <button onClick={() => setTab(3)} className={`${tab==3 && 'border-b-2 border-black'} hover:text-black text-sm text-gray-800 py-2 pl-1 pr-1`}>Instructors</button> </li>

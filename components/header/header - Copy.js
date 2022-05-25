@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function header() {
+export default function HeaderTW() {
   return (
     <header className=" bg-black h-auto p-5% lg:p-8% py-3 flex  md:grid md:grid-cols-65auto250 lg:grid-cols-100auto250">
       <span className="flex justify-between w-full">

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function header({color = 'black'}) {
+export default function Header({color = 'black'}) {
   const [burgerToggle, setBurgerToggle] = useState(false);
   const [isUser, setIsUser] = useState(false);
   return (
