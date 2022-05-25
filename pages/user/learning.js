@@ -22,7 +22,7 @@ export default function Learning() {
                     <li className="border-b-[6px] transition-all cursor-pointer border-transparent py-2 text-sm text-white">Archived</li>
                 </ul>
             </div>
-            <div className=" px-[6%] lg:px-[11%] grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-4 gap-x-4 py-6 mx-auto">
+            <div className=" px-[6%] lg:px-[11%] pb-40 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-4 gap-x-4 py-6 mx-auto">
                 {
                     watch_list.map( (learn, key) => <LearnItem  key={key}/>)
                 }

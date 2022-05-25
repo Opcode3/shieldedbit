@@ -121,7 +121,7 @@ svg{ display: inline-block;}
 
 
   /* Form */
-  input, select, textarea{
+   input[type='text'], input[type='number'], input[type='email'], input[type='password'], select, textarea{
     @apply appearance-none border rounded bg-blue-50/50 w-full leading-tight focus:outline-none;
   }
 

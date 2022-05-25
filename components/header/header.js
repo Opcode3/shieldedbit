@@ -8,7 +8,9 @@ export default function header({color = 'black'}) {
     <header className={`w-full ${ color == 'white'? 'bg-white' : 'bg-black'} overflow-hidden md:overflow-visible md:top-0 relative md:fixed z-20 px-[2%] md:px-[3%] lg:px-[6%] min-h-[80px]`}>
             <div className="w-full md:w-fit min-h-[80px] grid grid-cols-1 md:flex items-center float-left">
                 <div className=" w-full md:w-fit flex justify-between items-center">
-                    <img src='/assets/images/logo-white.png' className="w-20" alt="shieldedbit logo"/>
+                    <Link href="/"><a className='w-20'><img src='/assets/images/logo-white.png' className="w-[80%]" alt='shieldedbit logo' /></a></Link>
+
+                    {/* <img src='/assets/images/logo-white.png' className="w-20" alt="shieldedbit logo"/> */}
                     <svg onClick={()=> { setBurgerToggle(!burgerToggle)}} className={`w-8 h-8 text-white ${ burgerToggle ?  'inline-block' : 'hidden'} md:hidden mr-3`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                     <svg onClick={()=> { setBurgerToggle(!burgerToggle)}} className={`w-8 h-8 text-white ${ burgerToggle ? 'hidden' : 'inline-block' } md:hidden mr-3`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </div>
@@ -21,18 +23,14 @@ export default function header({color = 'black'}) {
                         <li className="dropdown_item">
                             <button className="text-sm flex w-full m-0 px-[10px] lg:px-4 py-2 items-center justify-between font-light text-white hover:text-gray-100">Services <span className="caret"></span> </button>
                             <ul className="dropdown md:bg-black">
-                                <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Learn IT Skill</a></Link> </li>
-                                <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Consultancy</a></Link> </li>
-                                <li> <Link href="/service"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">All Services</a></Link> </li>
+                                <li> <Link href="/service"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">View more</a></Link> </li>
                             </ul>
                         </li>
                         <li className="dropdown_item">
                             <button className="text-sm flex w-full m-0 px-[10px] lg:px-4 py-2 items-center justify-between font-light text-white hover:text-gray-100">Courses<span className="caret"></span> </button>
                             <ul className="dropdown md:bg-black">
-                                <li> <Link href="/about"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">CyberSecurity</a></Link> </li>
-                                <li> <Link href="/help"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Python</a></Link> </li>
-                                <li> <Link href="/help"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Machine Learning</a></Link> </li>
-                                <li> <Link href="/courses"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">See More Courses</a></Link> </li>
+                                {/* <li> <Link href="/about"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">CyberSecurity</a></Link> </li> */}
+                                <li> <Link href="/courses"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">View more</a></Link> </li>
                             </ul>
                         </li>
                         <li className="hidden lg:inline-block"><Link href='/contact'><a className="text-sm font-light px-[10px] lg:px-4 py-2 flex text-white hover:text-gray-100">Contact Us</a></Link></li>

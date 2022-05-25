@@ -1,10 +1,14 @@
-import Footer from "../components/footer/footer";
+
 import Header from "../components/header/header";
 import Link from 'next/link';
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>404 page - ShieldedBit</title>
+      </Head>
       <Header />
       <main className="md:mt-[80px]">
         
