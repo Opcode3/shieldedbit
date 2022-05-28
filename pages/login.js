@@ -7,8 +7,8 @@ export default function Login() {
       <Head>
         <title>Login - ShieldedBit</title>
       </Head>
-      <header className='flex pr-[3%] md:px-[6%] py-3 justify-between items-center'>
-        <Link href="/"><a className='w-24'><img src='/assets/images/logo-black.png' alt='shieldedbit logo' /></a></Link>
+      <header className='flex pl-[2%] pr-[3%] md:px-[6%] py-3 justify-between items-center'>
+        <Link href="/"><a className='w-16'><img src='/assets/images/logo-black.png' alt='shieldedbit logo' /></a></Link>
         <span className='text-sm'>
           <em className='hidden sm:inline'>New to ShieldedBit? </em>
           <Link href="/register"><a className='py-2 px-4 ml-2 bg-blue-600 hover:bg-transparent transition-colors hover:text-blue-600 text-white border-blue-600 border border-solid rounded'>Sign up</a></Link>

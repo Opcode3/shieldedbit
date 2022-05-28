@@ -9,7 +9,7 @@ export default function Step1({ active, setActive, setLevel}) {
 
   return (
     <form onSubmit={(e) => { e.preventDefault(); setLevel(1)}} className='w-[680px] max-w-[90%] px-2 mb-6 grid place-items-center '>
-        <h2 className='text-4xl font-bold'>Select a Account Type</h2>
+        <h2 className='text-2xl lg:text-4xl font-bold'>Select a Account Type</h2>
         <p className='mb-6'>Select a user type to continue registration!</p>
         <div className='py-2 w-full text-center'>
             <span onClick={()=>{setActive(0)}} className={ `${active == 0?'bg-blue-800':''} bg-blue-600 text-blue-50 cursor-pointer hover:bg-blue-800 transition-colors py-2 px-4 inline-block`}>Individual</span>

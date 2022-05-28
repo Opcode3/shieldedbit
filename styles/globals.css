@@ -66,8 +66,9 @@ a {
 }
 
 span{
-  color: #212529; 
+  /* color: #212529;  */
 }
+
 
 
 svg{ display: inline-block;}

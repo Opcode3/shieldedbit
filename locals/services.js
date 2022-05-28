@@ -37,7 +37,7 @@ const serviceDB = [
     },
     {
         title: 'Internship & IT Career Development',
-        image: '',
+        image: '/assets/images/services/training.jpg',
         lists: []
     },
 ];

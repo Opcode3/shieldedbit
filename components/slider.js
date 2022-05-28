@@ -53,7 +53,7 @@ export default function Slider() {
 
   return (
     <div ref={slideRef} className='w-full select-none relative'>
-        <div className='w-full mx-auto'>
+        <div className='w-full overflow-hidden mx-auto'>
             <img src={slider_image[currentIndex]} alt='image slider 1'/>
         </div>
         <div className="absolute w-full top-[30%] md:top-[40%] px-2 md:px-10 lg:px-16  py-2 transform flex justify-between">
