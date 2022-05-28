@@ -8,7 +8,7 @@ import Tutor from './Tutor';
 export default function Step2({ setLevel, accountType }) {
   const [active, setActive] = useState(1);
   return (
-    <form onSubmit={(e) => { setLevel(2)}} className='w-[780px] max-w-[96%] sm:max-w-[94%] px-2 mb-6 grid place-items-center '>
+    <form onSubmit={(e) => { setLevel( accountType == 1 ? 2 : 3 )}} className='w-[780px] max-w-[96%] sm:max-w-[94%] px-2 mb-6 grid place-items-center '>
         <h2 className='text-4xl font-bold'> 
             { 
               accountType == 0 ? 'User' : 

@@ -17,10 +17,10 @@ export default function Register() {
     <Head>
       <title>Register - ShieldedBit</title>
     </Head>
-      <header className='flex pr-[3%] pl-[2%] md:px-[6%] py-3 justify-between items-center'>
-        <Link href="/"><a className={`w-16 ${level == 1 && 'hidden'}`}><img src='/assets/images/logo-black.png' alt='shieldedbit logo' /></a></Link>
-        <span className={`cursor-pointer bg-gray-700 ${level != 1 && 'hidden'} ml-4 mt-4 md:mt-0 md:ml-0`} onClick={ ()=> setLevel(0)}>
-        <svg className="w-7 h-7 bg-white hover:-translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
+      <header className='flex pr-[3%] pl-[2%] md:px-[6%] pb-3 pt-6 justify-between items-center'>
+        <Link href="/"><a className={`w-12 ${level == 1 && 'hidden'}`}><img src='/assets/images/logo-black.png' alt='shieldedbit logo' /></a></Link>
+        <span className={`cursor-pointer lg:bg-gray-700 ${level != 1 && 'hidden'} ml-4 mt-4 md:mt-0 md:ml-0`} onClick={ ()=> setLevel(0)}>
+        <svg className="w-7 h-7 bg-white lg:hover:-translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
         </span>
         <span className='text-sm'>
           <em className='hidden sm:inline'>Already have an account? </em>

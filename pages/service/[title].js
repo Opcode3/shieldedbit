@@ -5,6 +5,7 @@ import Footer from "../../components/footer/footer";
 import Consulting from "../../components/consulting";
 import serviceDB from '../../locals/services';
 import TopicList from "../../components/topicList";
+import Image from "next/image";
 
 export default function Index() {
   const router = useRouter();
@@ -35,11 +36,19 @@ export default function Index() {
             <title>{title} Service - ShieldedBit</title>
         </Head>
         <Header />
-        <main className="md:mt-[80px] 2xl:mt-[90px] pb-[100px] w-full min-h-[50vh] max-w-[90rem] mx-auto">
-            <div className="overflow-hidden 2xl:rounded-xl relative max-h-[600px] h-fit w-full">
-              <img src={viewImage.trim().length > 3 ? viewImage : `/assets/images/slider/course.jpg`} className="h-full float-right md:mr-20 object-right-top object-contain" alt=""/>
-              <div className="absolute bottom-0 z-[3px] bg-blue-900/60 w-full h-full flex justify-start items-end">
-                <h1 className="max-w-[100%] w-[800px] text-2xl md:text-4xl text-white xl:text-5xl pl-[2%] py-[5%]"> {title}</h1>
+        <main className="md:mt-[90px] 2xl:mt-[90px] pb-[100px] w-full lg:w-[90%] 2xl:w-[80%] min-h-[50vh] max-w-[90rem] mx-auto">
+            <div className="overflow-hidden relative flex justify-end lg:rounded-xl h-[60vh] max-h-[600px] w-full">
+              <Image
+                src={viewImage.trim().length > 3 ? viewImage : `/assets/images/slider/course.jpg`}
+                layout='intrinsic'
+                width='500px'
+                height='500px'
+                priority={true}
+              />
+
+              {/* <img  className="h-full float-right md:mr-20 object-right-top object-contain" alt=""/> */}
+              <div className="absolute bottom-0 z-[3px] bg-gradient-to-br from-blue-600/80 via-cyan-500/80 to-black/80 w-full h-full flex justify-start items-end sm:items-center">
+                <h1 className="max-w-[88%] w-[600px] text-2xl md:text-4xl text-white xl:text-5xl ml-[5%] pl-[2%] py-[5%]"> {title}</h1>
               </div>
             </div>
             <div className="pt-5 sm:w-[96%] mx-auto">

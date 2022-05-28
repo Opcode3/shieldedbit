@@ -36,7 +36,7 @@ export default function Index() {
             <title>Courses - ShieldedBit</title>
         </Head>
         <Header />
-        <main className="md:mt-[80px] w-full max-w-[90rem] mx-auto">
+        <main className="md:mt-[80px] md:w-[90%] max-w-[90rem] mx-auto">
             <CourseBanner/>
             <div className="mt-2 mb-4 pt-5 md:w-[89%] mx-auto bg-gray-50">
                 <div>

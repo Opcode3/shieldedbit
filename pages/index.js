@@ -62,7 +62,7 @@ export default function Home() {
           <div className="text-center w-[700px] mx-auto max-w-[98%] mb-10 md:mb-12">
             <h2 className="text-4xl font-extrabold mb-2">About ShieldedBit</h2>
             <p>
-              We're a global cybersecurity consultancy company;
+              We&apos;re a global cybersecurity consultancy company;
               with broad experience and outstanding world class services both at the industry and academia level.
              </p>
           </div>

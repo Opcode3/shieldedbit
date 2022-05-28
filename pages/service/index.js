@@ -18,9 +18,16 @@ export default function Home() {
       <main className="md:mt-[80px]">
         <Pagetitle page='Services' description='Our Services' />
         
-        <div className="min-h-[50vh] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 sm:gap-x-4 max-w-[96%] w-[1280px] mt-5 mb-20 mx-auto">
+        <div className="min-h-[50vh] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 sm:gap-x-4 max-w-[92%] md:max-w-[70%] w-[1280px] mt-5 mb-20 mx-auto">
           { 
-             service_list.map( (singleService, index) => <ServiceCard key={index} image={singleService.image} title={singleService.title} />)
+             service_list.map( 
+               (singleService, index) => 
+                  <ServiceCard 
+                    key={index} 
+                    image={singleService.image} 
+                    title={singleService.title} 
+                  />
+                )
           }
         </div>
       </main>
