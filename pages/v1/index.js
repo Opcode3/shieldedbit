@@ -10,8 +10,7 @@ export default function Index() {
         <title> Adminstrative End - ShieldedBit</title>
       </Head>
       <Layout>
-        <div className="bg-green-500 h-screen">
-          Joseph Emmanuel Emeka
+        <div className="bg-green-500">
         </div>
       </Layout>
       

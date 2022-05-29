@@ -6,11 +6,10 @@ import Footer from "../footer/footer";
 export default function Layout({ children }) {
     const [burgerToggle, setBurgerToggle] = useState(false);
     const menus = [
-      {value: 'Manage Courses', href:'/'},
-      {value: 'Manage Services', href:'/'},
-      {value: 'Manage Users', href:'/'},
-      {value: 'Manage Request', href:'/'},
-
+      {value: 'Manage Courses', href:'/v1/courses'},
+      {value: 'Manage Services', href:'/v1/services'},
+      {value: 'Manage Users', href:'/v1/users'},
+      {value: 'Manage Request', href:'/v1/support'},
     ]
   return (
     <div className=' bg-gray-50'>
@@ -33,10 +32,15 @@ export default function Layout({ children }) {
             </div>
                 
         </header>
-        <main className="min-h-[90vh] block w-full clear-both bg-green-200">
+        <nav className="bg-white pl-4 w-full">
+          <Link href="/"><a className='w-20'><img src='/assets/images/logo-blue.png' className="w-20" alt='shieldedbit logo' /></a></Link>
+        </nav>
+        <main className="min-h-[calc(100vh-150px)] block w-full clear-both bg-green-400">
             { children }
         </main>
-        {/* <Footer/> */}
+        <footer className="h-[100px] bg-red-400 flex items-center justify-center font-light text-sm">
+          CopyRight &copy; 2022 - ShieldedBit.
+        </footer>
     </div>
   )
 }

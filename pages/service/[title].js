@@ -13,8 +13,6 @@ export default function Index() {
 
   const serviceInfo = JSON.parse(serviceDB);
 
-  // console.log( serviceInfo.filter( single_service => single_service.title == title) );
-
   const viewed_service =  serviceInfo.filter( single_service => single_service.title == title)
 
   let viewImage = '';
