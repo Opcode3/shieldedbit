@@ -31,7 +31,7 @@ export default function Courses() {
           <Tab items={tab_data}>
               {
                 tabIndex == 0 ? <div>courses { request.post('url', '30') }</div>
-                : <div>courses { request.get('url', '30') }</div>
+                : <div>courses { request.get('https://jsonplaceholder.typicode.com/posts/3', '30') }</div>
               }
           </Tab>
         </Layout>

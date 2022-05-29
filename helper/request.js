@@ -1,23 +1,44 @@
 
-export default function Request() {
+export default class Request{
+
+    response 
   
-    this.post = (url, data, header = '') => {
+    post(url, data, header = ''){
         return 'Making use of Post request'
     }
 
-    this.get = (url, data, header = '') => {
+    get(url, data, header = ''){
+        // let response = null
+        // fetchApi(url, function(data){
+        //     response = data;
+        //     // console.log(response);
+        // });
+        // console.log(response)
+        // return response;
         return 'Making use of get request'
+
     }
 
-    this.put = (url, data, header = '') => {
+    put(url, data, header = '') {
         return 'Making use of put request'
     }
 
-    this.delete = (url, data, header = '') => {
+    delete(url, data, header = ''){
         return 'Making use of delete request'
     }
 }
 
-// async function fetchApi(){
-    // const response = await fetch()
-// }
+function fetchApi(url, callback){
+     fetch('https://jsonplaceholder.typicode.com/todos/1')
+     .then(response => response.json())
+     .then(json => callback(json))
+}
+
+
+// let data = null;
+//      fetch('https://jsonplaceholder.typicode.com/todos/1')
+//      .then(response => response.json())
+//      .then(json => {
+//          data = json;
+//      console.log(json)})
+//     return data;
