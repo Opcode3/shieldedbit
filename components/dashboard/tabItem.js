@@ -1,6 +1,9 @@
 
-export default function TabItem({text}) {
+export default function TabItem({tabIndex, setTabIndex, text}) {
   return (
-    <li className="px-4 py-2 inline-block cursor-pointer text-gray-400 hover:text-gray-900 text-lg">{text}</li>
+    <li onClick={setTabIndex}
+        className={`px-5 py-3 inline-block cursor-pointer text-gray-500 ${tabIndex && `text-gray-900 bg-gray-100`} hover:text-gray-900 text-lg`}
+        >{text}
+    </li>
   )
 }

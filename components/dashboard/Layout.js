@@ -12,7 +12,7 @@ export default function Layout({ children }) {
       {value: 'Manage Request', href:'/v1/support'},
     ]
   return (
-    <div className=' bg-gray-50'>
+    <>
         <header className="h-80 w-48 fixed right-8 top-8 flex flex-col items-end">
 
             <div onClick={()=> { setBurgerToggle(!burgerToggle)}} className="w-16 cursor-pointer h-16 inline-flex justify-center items-center shadow bg-blue-500 rounded-full">
@@ -32,15 +32,15 @@ export default function Layout({ children }) {
             </div>
                 
         </header>
-        <nav className="bg-white pl-4 w-full">
-          <Link href="/"><a className='w-20'><img src='/assets/images/logo-blue.png' className="w-20" alt='shieldedbit logo' /></a></Link>
+        <nav className="pl-4 block w-full">
+          <Link href="/v1"><a className='w-20 inline-block overflow-hidden'><img src='/assets/images/logo-blue.png' className="w-20" alt='shieldedbit logo' /></a></Link>
         </nav>
-        <main className="min-h-[calc(100vh-150px)] block w-full clear-both bg-green-400">
+        <main className="min-h-[calc(100vh-185px)] block w-full">
             { children }
         </main>
-        <footer className="h-[100px] bg-red-400 flex items-center justify-center font-light text-sm">
+        <footer className="h-[100px] bg-green-500 flex items-center justify-center font-light text-sm">
           CopyRight &copy; 2022 - ShieldedBit.
         </footer>
-    </div>
+    </>
   )
 }
