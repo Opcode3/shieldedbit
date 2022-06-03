@@ -1,7 +1,5 @@
 
-export default class Request{
-
-    response 
+export default class Request{ 
   
     post(url, data, header = ''){
         return 'Making use of Post request'
