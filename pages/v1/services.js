@@ -16,7 +16,7 @@ export default function Services() {
       setTabIndex: () => setTabIndex(1)
     },
     {
-      text: 'View Courses',
+      text: 'View Service',
       tabIndex: tabIndex == 0,
       setTabIndex: () => setTabIndex(0)
     }

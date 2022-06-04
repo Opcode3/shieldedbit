@@ -17,7 +17,7 @@ export default function Header() {
     <header className="w-full bg-gray-50 md:top-0 px-[2%] md:px-[3%] lg:px-[6%] min-h-auto border-b border-gray-200">
         <div className="w-full md:w-fit min-h-[40px] pt-3 pb-1 grid grid-cols-1 md:flex items-center float-left">
             <div className="w-full md:w-fit flex justify-between items-center">
-                <Link href="/"><a className='w-14'><img src='/assets/images/logo-black.png' className="w-[80%]" alt='shieldedbit logo' /></a></Link>
+                <Link href="/user"><a className='w-14'><img src='/assets/images/logo-black.png' className="w-[80%]" alt='shieldedbit logo' /></a></Link>
 
                 <svg onClick={()=> { setBurgerToggle(!burgerToggle)}} className={`w-8 h-8 ${ burgerToggle ?  'inline-block' : 'hidden'} md:hidden mr-3`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 <svg onClick={()=> { setBurgerToggle(!burgerToggle)}} className={`w-8 h-8 ${ burgerToggle ? 'hidden' : 'inline-block' } md:hidden mr-3`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -94,7 +94,7 @@ export default function Header() {
                         <li> <Link href="/login"><a className="text-sm font-light text-gray-800 px-[10px] lg:px-4 py-3 block hover:text-black hover:bg-gray-100">Profile</a></Link> </li>
                         <li> <Link href="/login"><a className="text-sm font-light text-gray-800 px-[10px] lg:px-4 py-3 block hover:text-black hover:bg-gray-100">Account Settings</a></Link> </li>
                         <hr className="my-2"/>
-                        <li> <Link href="/login"><a className="text-sm font-light text-gray-800 px-[10px] lg:px-4 py-3 block hover:text-black hover:bg-gray-100">Logout</a></Link> </li>
+                        <li> <Link href="/user/logout"><a className="text-sm font-light text-gray-800 px-[10px] lg:px-4 py-3 block hover:text-black hover:bg-gray-100">Logout</a></Link> </li>
                     </ul>
                 </li>
             </ul>

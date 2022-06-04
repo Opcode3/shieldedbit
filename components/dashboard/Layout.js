@@ -1,19 +1,35 @@
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useUserState } from "./UserProvider";
+import { useRouter } from "next/router";
 
 export default function Layout({ children }) {
+
+  const router = useRouter();
+  const {getAdmin} = useUserState();
+
+  useEffect(() => {
+    // console.log(getAdmin)
+
+    if(getAdmin.token == undefined || ( getAdmin.token != null && getAdmin().token.trim().length <= 10)){
+      router.push("/v1/login")
+    }
+  }, [])
+  
+
+
     const [burgerToggle, setBurgerToggle] = useState(false);
     const menus = [
       {value: 'Manage Courses', href:'/v1/courses'},
       {value: 'Manage Services', href:'/v1/services'},
       {value: 'Manage Users', href:'/v1/users'},
       {value: 'Manage Request', href:'/v1/support'},
-      {value: 'Logout', href:'/v1/logout'},
+      {value: 'Logout', href:'/v1/logout'} 
+    ];
 
-    ]
   return (
-    <>
+      <>
         <header className="w-full md:pr-[2%] lg:px-[8%] py-1 items-center  bg-white flex flex-col md:flex-row justify-between">
             <div className="flex justify-between w-full md:w-fit">
               <Link href="/v1"><a className='w-16 inline-block overflow-hidden'><img src='/assets/images/logo-blue.png' className="w-20" alt='shieldedbit logo' /></a></Link>
@@ -24,11 +40,11 @@ export default function Layout({ children }) {
               </div>
             </div>
 
-            <nav className={`pl-4 w-full bg-red-500 md:w-fit ${ burgerToggle ? 'block' : 'hidden md:inline-block' }`}>
+            <nav className={`pl-4 w-full md:w-fit ${ burgerToggle ? 'block' : 'hidden md:inline-block' }`}>
                 <ul className="flex flex-col md:flex-row">
                   {
                     menus.map( (menu, index) => 
-                        <li key={index}><Link href={menu.href}><a className="pt-4 pb-3 px-2 lg:px-3 font-extralight text-sm lg:text-base text-green-800 hover:bg-gray-300 block md:inline-block">{menu.value}</a></Link></li>
+                        <li key={index}><Link href={menu.href}><a className="pt-4 pb-3 px-2 lg:px-3 font-extralight text-sm lg:text-base text-gray-600 hover:text-gray-800 block md:inline-block">{menu.value}</a></Link></li>
                       )
                   }
                   
@@ -40,13 +56,15 @@ export default function Layout({ children }) {
             {/* </div> */}
                 
         </header>
-      
-        <main className="min-h-[calc(100vh-150px)] block w-full">
-            { children }
-        </main>
-        <footer className="h-[100px] bg-gray-100 flex items-center justify-center font-light text-sm">
-          CopyRight &copy; 2022 - ShieldedBit.
+
+          <main className="min-h-[calc(100vh-150px)] block w-full">
+            {/* <h2>Welcome { name }</h2> */}
+              { children }
+          </main>
+
+        <footer className="h-[100px] bg-white flex items-center justify-center font-light text-sm">
+          CopyRight &copy; 2022 - ShieldedBit. 
         </footer>
-    </>
+      </>
   )
 }

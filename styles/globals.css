@@ -85,7 +85,7 @@ svg{ display: inline-block;}
   form label{ @apply block pb-1;}
 
   .dropdown{
-    @apply  md:absolute hidden md:bg-gray-50 py-3 p-0 ml-3 md:ml-0 md:min-w-[180px] md:shadow-lg right-0 rounded-b-md;
+    @apply  md:absolute hidden md:bg-gray-50 py-3 p-0 ml-3 md:ml-0 md:min-w-[180px] md:shadow-lg z-30 right-0 rounded-b-md;
   }
 
   .dropdown_item{ @apply inline-block md:relative; }

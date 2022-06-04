@@ -4,11 +4,12 @@ import CourseItem from "../../components/CourseItem";
 import Layout from "../../components/user/Layout";
 
 export default function Dashboard() {
+  
 
   const course_list = [
     {}, {}, {}, {},
     {}, {}, {}, {}
-  ]
+  ];
 
   return (
     <>

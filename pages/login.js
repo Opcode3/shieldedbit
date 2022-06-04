@@ -2,6 +2,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function Login() {
+
+  const date = new Date();
+
   return (
     <>
       <Head>
@@ -16,7 +19,7 @@ export default function Login() {
       </header>
       <main className='container mx-auto mt-10 md:mt-[10vh] flex place-content-center pb-14'>
         <form className='w-[380px] sm:max-w-[90%] px-2 grid place-items-center '>
-          <h2 className='text-3xl font-bold mb-1 py-1'>Login to ShieldedBit</h2>
+          <h2 className='text-3xl md:text-4xl font-bold mb-1 py-1'>Login to ShieldedBit</h2>
           <p className='mb-6 w-full'>Welcome back! Please log in to view your account.</p>
           <div className='py-2 w-full'>
             <label htmlFor='username'>Username</label>
@@ -32,6 +35,9 @@ export default function Login() {
           </div>
         </form>
       </main>
+      <footer className="h-[80px] md:h-[160px] pb-[30px] flex items-end justify-center font-light text-sm">
+          CopyRight &copy; {date.getFullYear()} - ShieldedBit.
+      </footer>
     </>
   )
 }

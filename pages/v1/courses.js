@@ -4,6 +4,7 @@ import Tab from "../../components/dashboard/tab";
 import Request from "../../helper/request";
 import { useState } from "react";
 
+
 export default function Courses() {
 
   const request = new Request();
@@ -30,11 +31,14 @@ export default function Courses() {
         <Layout>
           <Tab items={tab_data}>
               {
-                tabIndex == 0 ? <div>courses { request.post('url', '30') }</div>
+
+                tabIndex == 0 ? <div> courses { request.post('url', '30') } </div>
                 : <div>courses { request.get('https://jsonplaceholder.typicode.com/posts/3', '30') }</div>
               }
           </Tab>
         </Layout>
       </>
   )
+
+
 }
