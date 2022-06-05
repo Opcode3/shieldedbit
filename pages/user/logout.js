@@ -5,14 +5,13 @@ import { useUserState } from '../../components/dashboard/UserProvider'
 
 export default function Logout() {
 
-    const { getUser } = useUserState();
     const router = useRouter();
 
     useEffect(()=>{
-        getUser().token = "";
-        getUser().name = "";
-        router.push("/login");
+      localStorage.removeItem('shieldedbit_user_info');
+      router.push("/login");
     }, [])
+    
   return (
     <>
         <Head>

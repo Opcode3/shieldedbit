@@ -3,18 +3,22 @@ import { useRouter } from "next/router";
 import { useUserState } from "../dashboard/UserProvider";
 import Footer from "../footer/footer";
 import Header from "./header";
-import React from "react";
+// import React, {useState} from "react";
+import { authCheck } from "../../helper/authenticate";
 
 export default function Layout({ children }) {
 
-  const { getUser } = useUserState();
+  // const [authorized, setAuthorized] = useState(false);
   const router = useRouter();
 
-  React.useEffect(() => {
-    if( getUser().token == undefined || (getUser().token != null && getUser().token.trim().length <= 10)){
+  authCheck(async (user_data)=>{
+
+    if(user_data == undefined && router.pathname.includes("/user")){
       router.push("/login")
     }
-  }, []);
+
+  })
+
     
   return (
     <div className=' bg-gray-50'>

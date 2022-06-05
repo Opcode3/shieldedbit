@@ -1,18 +1,16 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect} from 'react'
-import { useUserState } from '../../components/dashboard/UserProvider'
 
 export default function Logout() {
 
-    const { getAdmin } = useUserState();
     const router = useRouter();
 
     useEffect(()=>{
-        getAdmin().token = "";
-        getAdmin().name = "";
-        router.push("/v1/login");
+      localStorage.removeItem('shieldedbit_admin_data');
+      router.push("/v1/login");
     }, [])
+    
   return (
     <>
         <Head>
