@@ -5,6 +5,7 @@ import { authCheck } from "../../helper/authenticate";
 
 import { useUserState } from "./UserProvider";
 import { useRouter } from "next/router";
+import Preload from "../preload";
 
 export default function Layout({ children }) {
 
@@ -35,7 +36,7 @@ export default function Layout({ children }) {
     
       <>
       {
-        loader ? <h2> Loading ...</h2> 
+        loader ? <Preload />
               :
               <>
                 <header className="w-full md:pr-[2%] lg:px-[8%] py-1 items-center  bg-white flex flex-col md:flex-row justify-between">
