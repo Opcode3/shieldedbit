@@ -1,10 +1,20 @@
 import Head from "next/head";
 import Link from "next/link";
 import CourseItem from "../../components/CourseItem";
+import React, {useState} from 'react';
 import Layout from "../../components/user/Layout";
+import { useUserState } from "../../components/dashboard/UserProvider";
 
 export default function Dashboard() {
-  
+  const [name, setName] = useState('');
+
+  const {user} = useUserState()
+
+  React.useEffect(() => {
+
+    setName(user.usename);
+
+  }, [name]);
 
   const course_list = [
     {}, {}, {}, {},
@@ -20,7 +30,7 @@ export default function Dashboard() {
           <div className="w-full md:px-[3%] lg:px-[8%] md:h-[400px] bg-blue-400 flex flex-col-reverse md:flex-row items-center overflow-hidden md:justify-between ">
             <div>
               <div className="shadow-2xl w-72 mb-10 md:mb-0 rounded px-4 py-3 bg-white">
-                <h4 className="text-xl">Welcome back !User</h4>
+                <h4 className="text-xl">Welcome back {name}</h4>
                 <p className="text-sm font-light pt-1">
                   We would recommend that you stay consistent with your <Link href='/user/learning'><a className="text-blue-500">learning</a></Link>. 
                   Enjoy your stay with us!

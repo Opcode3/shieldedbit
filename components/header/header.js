@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import img_logo from '../../public/assets/images/logo-white.png';
 
 export default function Header({color = 'black'}) {
   const [burgerToggle, setBurgerToggle] = useState(false);
@@ -8,7 +10,9 @@ export default function Header({color = 'black'}) {
     <header className={`w-full ${ color == 'white'? 'bg-white' : 'bg-black'} overflow-hidden md:overflow-visible md:top-0 relative md:fixed z-20 px-[2%] md:px-[3%] lg:px-[6%] min-h-[80px]`}>
             <div className="w-full md:w-fit min-h-[80px] grid grid-cols-1 md:flex items-center float-left">
                 <div className=" w-full md:w-fit flex justify-between items-center">
-                    <Link href="/"><a className='w-20'><img src='/assets/images/logo-white.png' className="w-[80%]" alt='shieldedbit logo' /></a></Link>
+                    <Link href="/"><a className='w-20'>
+                        <Image src={img_logo} priority className="w-[80%]" alt='shieldedbit logo' /></a>
+                    </Link>
 
                     {/* <img src='/assets/images/logo-white.png' className="w-20" alt="shieldedbit logo"/> */}
                     <svg onClick={()=> { setBurgerToggle(!burgerToggle)}} className={`w-8 h-8 text-white ${ burgerToggle ?  'inline-block' : 'hidden'} md:hidden mr-3`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>

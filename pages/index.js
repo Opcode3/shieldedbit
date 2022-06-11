@@ -6,6 +6,7 @@ import Header from "../components/header/header";
 import Slider from "../components/slider";
 import TopicList from "../components/topicList";
 import WorkList from "../components/workList";
+import what_we_do from '../public/assets/images/home/what_we_do.png';
 
 export default function Home() {
 
@@ -67,17 +68,16 @@ export default function Home() {
              </p>
           </div>
           <div className="w-[100%] gap-y-10 items-center justify-center flex-col md:flex-row flex">
-          <img 
-              src='/assets/images/home/what_we_do.png'
-              className="w-[70%] md:w-[calc(100%-280px)] lg:w-[calc(100%-400px)]" 
-              alt="What we do"/>
-
-          <div className="flex justify-center w-[300px] max-w-[94%] flex-col md:pl-[20px] lg:pl-[40px]">
-            <h4 className="text-xl font-bold">Our Core Services</h4>
-            <div>
-              <TopicList dataSet={service_data} />
+            <div className="w-[70%] block md:w-[calc(100%-280px)] lg:w-[calc(100%-450px)]">
+              <Image src={what_we_do} layout='responsive' alt="What we do"/>
             </div>
-          </div>
+
+            <div className="flex justify-center w-[300px] max-w-[94%] flex-col md:pl-[20px] lg:pl-[40px]">
+              <h4 className="text-xl font-bold">Our Core Services</h4>
+              <div>
+                <TopicList dataSet={service_data} />
+              </div>
+            </div>
 
           </div>
         </div>

@@ -1,12 +1,9 @@
 import Head from "next/head";
 import Layout from "../../components/dashboard/Layout";
 import Tab from "../../components/dashboard/tab";
-import Request from "../../helper/request";
 import { useState } from "react";
 
 export default function Users() {
-
-  const request = new Request();
   const [tabIndex, setTabIndex] =  useState(1);
 
   const tab_data = [
@@ -41,10 +38,10 @@ export default function Users() {
           <Tab items={tab_data}>
 
             {
-              tabIndex == 0 ? <div>Individuals { request.post('url', '30') }</div> :
-                tabIndex == 1 ? <div>Cooporate Organizations { request.post('url', '30') }</div> :
-                  tabIndex == 2 ? <div>Partners { request.post('url', '30') }</div> :
-                    <div>Tutors { request.get('url', '30') }</div>
+              tabIndex == 0 ? <div>Individuals </div> :
+                tabIndex == 1 ? <div>Cooporate Organizations </div> :
+                  tabIndex == 2 ? <div>Partners </div> :
+                    <div>Tutors </div>
             }
           </Tab>
         </Layout>

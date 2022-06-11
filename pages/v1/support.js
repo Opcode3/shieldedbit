@@ -1,10 +1,7 @@
 import Head from "next/head";
 import Layout from "../../components/dashboard/Layout";
-import Request from "../../helper/request";
 
 export default function Support() {
-
-  const request = new Request();
 
   return (
       <>
@@ -13,7 +10,7 @@ export default function Support() {
       </Head>
         <Layout>
 
-            { <div>support { request.get('url', '30') }</div>}
+            { <div>support </div>}
             
         </Layout>
       </>

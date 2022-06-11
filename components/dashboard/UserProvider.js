@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react"
 import { useState } from "react";
-import { getAdmin, getUser} from '../../helper/authenticate'
+// import { getAdmin, getUser} from '../../helper/authenticate'
 
 
 
@@ -21,15 +21,16 @@ export function UserProvider({children}){
         const getUserType = async () => {
 
             if(router.pathname.includes("/v1")){
-                const admin = await getAdmin()
-                setUser(admin)
-                // console.log("Admin logged in")
+                // const admin = await getAdmin()
+                // setUser({'username': 'Joseph Emeka'})
+                console.log("Admin logged in")
             }
 
             if(router.pathname.includes("/user")){
-                const user_ = await getUser()
-                setUser(user_)
-                // console.log("User logged in")
+                const fetched_data = localStorage.getItem('shieldedbit_user_info');
+                const user_data = fetched_data !== null ? JSON.parse(fetched_data) : undefined;
+                setUser(user_data)
+                console.log("User logged in")
             }
         }
 

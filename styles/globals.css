@@ -127,7 +127,7 @@ svg{ display: inline-block;}
   }
 
 
-  .aboutTeam{
+  /* .aboutTeam{
     @apply w-[90%] sm:w-[340px]  overflow-hidden pb-3 rounded-lg;
   }
 
@@ -145,7 +145,7 @@ svg{ display: inline-block;}
 
   .aboutTeam div img{
     @apply w-full object-center object-cover;
-  }
+  } */
 
 
   .consulting{

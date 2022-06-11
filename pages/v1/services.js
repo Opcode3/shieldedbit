@@ -5,8 +5,6 @@ import Request from "../../helper/request";
 import { useState } from "react";
 
 export default function Services() {
-
-  const request = new Request();
   const [tabIndex, setTabIndex] =  useState(1);
 
   const tab_data = [
@@ -33,8 +31,8 @@ export default function Services() {
           <Tab items={tab_data}>
 
             {
-              tabIndex == 0 ? <div>services { request.post('url', '30') }</div>
-              : <div>services { request.get('url', '30') }</div>
+              tabIndex == 0 ? <div>view services </div>
+              : <div>add services</div>
             }
           </Tab>
         </Layout>
