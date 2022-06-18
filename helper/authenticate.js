@@ -5,7 +5,7 @@ import { postRequest } from "./request";
 
 
 // get user information from db call
-export const getUser = async (formData, setResponse) => {
+export async function getUser(formData, setResponse) {
 
     const rsp = await postRequest('https://passbuttons.com/fnn/loginauth',formData, 
             (data)=>{
@@ -28,11 +28,11 @@ export const getUser = async (formData, setResponse) => {
 }
 
 // get admin information from db call
-export const getAdmin = async (username, password) => {
+export const getAdmin = async (form_data, setResponse) => {
     
-    if(username == "admin" && password == "admin123"){
-        setLocalStorage("shieldedbit_admin_data", {name: "Joseph Emmanuel", username:username, token: "jskskslssnk339822092jjwkwkek38982"})
-        return {name: "Joseph Emmanuel", username:username}
+    if(form_data[0] == "admin" && form_data[1] == "admin123"){
+        setLocalStorage("shieldedbit_admin_data", {name: "Joseph Emmanuel", username:form_data[0], token: "jskskslssnk339822092jjwkwkek38982"})
+        setResponse({name: "Joseph Emmanuel", username:form_data[0]});
     }
 
     // if password = null then get some data else do a strict authenticity
@@ -43,7 +43,7 @@ export const getAdmin = async (username, password) => {
 // Login
 export async function authenticate (form_data, pathurl, setResponse){
 
-    return pathurl.includes("/v1/login") ? await getAdmin(form_data) : await getUser(form_data, setResponse);
+    return pathurl.includes("/v1") ? await getAdmin(form_data, setResponse) : await getUser(form_data, setResponse);
 }
 
 export const authCheck = (callback, store_key = "shieldedbit_user_info") => {

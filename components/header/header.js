@@ -1,11 +1,25 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { authCheck } from '../../helper/authenticate';
+import { useUserInfo } from '../../helper/helper';
 import img_logo from '../../public/assets/images/logo-white.png';
 
 export default function Header({color = 'black'}) {
   const [burgerToggle, setBurgerToggle] = useState(false);
   const [isUser, setIsUser] = useState(false);
+
+
+  authCheck(async (user_data) => {
+
+    if(user_data != undefined && typeof user_data == 'object' && user_data.id.trim().length >= 4){
+        const { username } = useUserInfo(user_data);
+        setIsUser(true);
+      }
+  });
+
+
+
   return (
     <header className={`w-full ${ color == 'white'? 'bg-white' : 'bg-black'} overflow-hidden md:overflow-visible md:top-0 relative md:fixed z-20 px-[2%] md:px-[3%] lg:px-[6%] min-h-[80px]`}>
             <div className="w-full md:w-fit min-h-[80px] grid grid-cols-1 md:flex items-center float-left">
@@ -94,15 +108,14 @@ export default function Header({color = 'black'}) {
                               <button className="text-sm w-full px-[10px] lg:px-4 py-2 flex justify-between items-center font-light text-white hover:text-gray-100">Account <span className="caret"></span>
                               </button>
                               <ul className="dropdown md:bg-black">
-                                  <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Dashboard</a></Link> </li>
-                                  <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">My Courses</a></Link> </li>
-                                  <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">My Services</a></Link> </li>
+                                  <li> <Link href="/user"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Dashboard</a></Link> </li>
+                                  <li> <Link href="/user/learning"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">My Learning</a></Link> </li>
                                   <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Notifications</a></Link> </li>
                                   <hr className="my-2"/>
                                   <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Profile</a></Link> </li>
                                   <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Account Settings</a></Link> </li>
                                   <hr className="my-2"/>
-                                  <li> <Link href="/login"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Logout</a></Link> </li>
+                                  <li> <Link href="/user/logout"><a className="text-sm font-light text-white px-[10px] lg:px-4 py-3 block hover:text-gray-100 hover:bg-gray-900">Logout</a></Link> </li>
                               </ul>
                           </li>
                       </ul>

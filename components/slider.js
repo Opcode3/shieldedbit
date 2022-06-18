@@ -56,7 +56,7 @@ export default function Slider() {
 
   return (
     <div ref={slideRef} className='w-full select-none relative'>
-        <div className='w-full max-h-[calc(100vh-90px)] md:mt-[89px] overflow-hidden mx-auto bg-red-400'>
+        <div className='w-full max-h-[calc(100vh-90px)] md:mt-[89px] overflow-hidden mx-auto bg-blue-50'>
             <Image src={slider_image[currentIndex]} layout='responsive' placeholder='blur' priority alt={`image slider slider_${currentIndex}`}/>
         </div>
         <div className="absolute w-full top-[43%] md:top-[40%] px-2 md:px-10 lg:px-16  py-2 transform flex justify-between">

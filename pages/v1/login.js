@@ -10,19 +10,29 @@ export default function Login() {
 
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [response, setResponse] = useState();
+
   const [alert, setAlert] = useState("");
 
   const router = useRouter();
 
   const loginHandler = async (e) => {
     e.preventDefault();
-    const response = await authenticate(username, password, router.pathname);
-    if(response != null){
-      router.push('/v1')
-    }else{
-      setAlert("Message from server");
-    }
+    authenticate([username, password], router.pathname, setResponse);
   }
+
+  React.useEffect(() => {
+
+    if(response != undefined){
+      if(response != null){
+        router.push('/v1')
+      }else{
+        setAlert("Message from server");
+      }
+      console.log(response);
+    }
+
+  }, [response]);
 
   return (
     <>

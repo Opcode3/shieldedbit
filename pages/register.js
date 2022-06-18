@@ -15,8 +15,17 @@ export default function Register() {
   const [name, setName] = useState("Joseph Emmanuel");
   const [email, setEmail] = useState("opcode3@gmail.com");
   const [phone, setPhone] = useState("08159792686");
+  const [accountType, setAccountType] = useState("learner");
+
+  const accountTypes = ['learner', 'tutor/Trainer', 'partner', 'organization', 'company'];
+
 
   const [requestStatus, setRequestStatus] = useState(false);
+
+
+  const makeSentence = (sentence) => {
+    return sentence[0].toUpperCase()+sentence.slice(1);
+  }
 
 
 
@@ -44,21 +53,24 @@ export default function Register() {
       form_data.append('email', email);
       form_data.append('phone', phone);
       form_data.append('password', password);
+      form_data.append('type', accountType);
+
 
       postRequest(
         'https://passbuttons.com/fnn/registration', form_data,
         (data)=>{
-            setLoading(false)
+            // setLoading(false)
             if(data.code == 200){
               console.log('Success');
               setLevel(1)
             }else{
-              console.log(data)
               setAlert(data.message)
             }
+            // console.log(data)
+            setRequestStatus(false);
         },
         (error)=>{
-          console.log('Fetch Error:', error);
+          // console.log('Fetch Error:', error);
           setRequestStatus(false);
           setAlert('Unable to make request. Check your internet connection');
         }
@@ -85,8 +97,6 @@ export default function Register() {
     }
   }, [name, email]);
 
-  // Note: level {0: userType, 1:Register, 2:UserTypeForm, 3:finish}
-
   return (
     <>
       <Head>
@@ -97,7 +107,7 @@ export default function Register() {
         level == 0 ?
           <>
           <header className='flex pr-[3%] pl-[2%] md:px-[6%] pb-3 pt-4 justify-between items-center'>
-            <Link href="/"><a className={`w-12 bg-red-400 ${level == 1 && 'hidden'}`}>
+            <Link href="/"><a className={`w-12 ${level == 1 && 'hidden'}`}>
               <Image src={img_logo} priority alt='shieldedbit logo' />
               </a></Link>
             <span className={`cursor-pointer lg:bg-gray-700 ${level != 1 && 'hidden'} ml-4 mt-4 md:mt-0 md:ml-0`} onClick={ ()=> setLevel(0)}>
@@ -114,6 +124,15 @@ export default function Register() {
               <p className='mb-6'>Fill the form correctly to continue with the registration process...</p>
             
               <div className='py-2 w-full text-center grid grid-cols-1 gap-y-3 gap-x-5 '>
+                <div>
+                  
+                  <select required onChange={ e => setAccountType(e.target.value)} className='px-4 py-3'>
+                    <option value=''>Select an account type</option>
+                    {
+                      accountTypes.map( (type, key) => <option key={key} value={type}>{makeSentence(type)}</option>)
+                    }
+                  </select>
+                </div>
                 <div>
                   <input type='text' value={name} onChange={(e)=> setName(e.target.value)} className='px-4 py-3' required placeholder="Name"/>
                   {
@@ -137,13 +156,12 @@ export default function Register() {
 
               <div className={`justify-center flex my-4 w-full`}>
 
-                <button disabled={requestStatus}  className={ `${ requestStatus ? 'cursor-not-allowed bg-blue-300':'bg-blue-600 hover:bg-black hover:text-blue-600' }  inline-flex justify-center  text-lg font-bold transition ease-in-out duration-150 w-full py-3 rounded`}> 
+                <button disabled={requestStatus}  className={ `${ requestStatus ? 'cursor-not-allowed bg-blue-300':'bg-blue-600 hover:bg-black hover:text-blue-600' }  inline-flex justify-center items-center  text-lg font-bold transition ease-in-out duration-150 w-full py-3 rounded`}> 
                   <svg className={`${ requestStatus ? 'inline-block':'hidden' } animate-spin -ml-1 mr-3 h-5 w-5 text-black`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
                   Register
                 </button>
               </div>
             </form>
-            {/* <h1> { loading && 'Registering data '}</h1> */}
           </main>
           <footer className="h-[80px] md:h-[160px] pb-[30px] flex items-end justify-center font-light text-sm">
               CopyRight &copy; {date.getFullYear()} - ShieldedBit.

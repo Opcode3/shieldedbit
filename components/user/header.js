@@ -87,8 +87,8 @@ export default function Header() {
                     <button className="text-sm w-full px-[10px] lg:px-4 py-2 flex justify-between items-center font-light text-gray-800 hover:text-black">Account <span className="caret"></span>
                     </button>
                     <ul className="dropdown">
-                        <li> <Link href="/login"><a className="text-sm font-light text-gray-800 px-[10px] lg:px-4 py-3 block hover:text-black hover:bg-gray-100">Dashboard</a></Link> </li>
-                        <li> <Link href="/login"><a className="text-sm font-light text-gray-800 px-[10px] lg:px-4 py-3 block hover:text-black hover:bg-gray-100">My Learning</a></Link> </li>
+                        <li> <Link href="/user"><a className="text-sm font-light text-gray-800 px-[10px] lg:px-4 py-3 block hover:text-black hover:bg-gray-100">Dashboard</a></Link> </li>
+                        <li> <Link href="/user/learning"><a className="text-sm font-light text-gray-800 px-[10px] lg:px-4 py-3 block hover:text-black hover:bg-gray-100">My Learning</a></Link> </li>
                         <li> <Link href="/login"><a className="text-sm font-light text-gray-800 px-[10px] lg:px-4 py-3 block hover:text-black hover:bg-gray-100">Notifications</a></Link> </li>
                         <hr className="my-2"/>
                         <li> <Link href="/login"><a className="text-sm font-light text-gray-800 px-[10px] lg:px-4 py-3 block hover:text-black hover:bg-gray-100">Profile</a></Link> </li>
