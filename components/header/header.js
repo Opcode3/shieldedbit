@@ -13,7 +13,7 @@ export default function Header({color = 'black'}) {
   authCheck(async (user_data) => {
 
     if(user_data != undefined && typeof user_data == 'object' && user_data.id.trim().length >= 4){
-        const { username } = useUserInfo(user_data);
+        // const { username } = useUserInfo(user_data);
         setIsUser(true);
       }
   });

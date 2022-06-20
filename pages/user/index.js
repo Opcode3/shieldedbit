@@ -20,9 +20,9 @@ export default function Dashboard() {
     if(user_data == undefined && router.pathname.includes("/user")){
       router.push("/login")
     }else{
-      const {username} = useUserInfo(user_data);
+      // const {username} = useUserInfo(user_data);
 
-      setName(username.toUpperCase());
+      setName(user_data.usename.toUpperCase());
 
       setLoader(false)
     }

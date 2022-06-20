@@ -18,8 +18,8 @@ export default function Learn() {
         if(user_data == undefined && router.pathname.includes("/user")){
           router.push("/login")
         }else{
-            const {username} = useUserInfo(user_data);
-            setName(username);
+            // const {username} = useUserInfo(user_data);
+            setName(user_data.usename);
             setLoader(false)
         }
     
