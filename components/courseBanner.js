@@ -2,9 +2,9 @@ import Link from 'next/link'
 export default function CourseBanner() {
   return (
     <div className="relative md:mt-24 overflow-hidden md:shadow-xl flex flex-col items-center md:min-h-[350px] min-h-[400px] md:max-h-[460px] mx-auto md:w-[94%] md:rounded-xl">
-        <div className='object-cover object-left-top block h-full'>
-            <img src='/assets/images/slider/course.jpg' className='w-full' alt=''/>
-        </div>
+        {/* <div className='object-cover object-left-top block h-full'>
+            <img src='/assets/images/slider/course.jpg' className='w-full' alt='course banner'/> }
+        </div> */}
         <div className='absolute flex flex-col items-center bg-gradient-to-br from-blue-600/80 via-cyan-500/80 to-black/80 justify-center gap-y-2 h-full w-full'>
             <h4 className="uppercase text-blue-50 text-sm font-medium">ShieldedBit Course Program</h4>
             <h2 className='text-2xl md:text-5xl text-blue-50 w-11/12 md:w-9/12 text-center font-bold'>Front End Web Developer</h2>

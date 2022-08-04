@@ -6,7 +6,7 @@ export default function CourseItem() {
   return (
     // <Link href={{ pathname:'courses', query: {id: 1} }} ><a>
     <Link href={`/courses/${120}`} ><a>
-        <div className="w-full h-fit rounded overflow-hidden" >
+        <div className="w-full min-h-[140px] bg-red-400 h-fit rounded overflow-hidden" >
             <img src='/assets/images/slider/course.jpg' className="h-full object-cover object-center" alt=''/>
         </div>
         <div className="grid grid-cols-1">

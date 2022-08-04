@@ -8,34 +8,32 @@ export default function Footer() {
         <div>
           <h3> Company</h3>
           <ul>
-            <li> <Link href="/"><a className="">About Us</a></Link> </li>
-            <li> <Link href="/"><a className="">News &amp; Media</a></Link> </li>
-            <li> <Link href="/"><a className="">Terms &amp; Conditions</a></Link> </li>
-            <li> <Link href="/"><a className="">Privacy Policy</a></Link> </li>
-            <li> <Link href="/"><a className="">Career</a></Link> </li>
-            <li> <Link href="/"><a className="">Contact Us</a></Link> </li>
+            <li> <Link href="/about"><a>About Us</a></Link> </li>
+            <li> <Link href="/"><a>Privacy Policy</a></Link> </li>
+            <li> <Link href="/career"><a>Career</a></Link> </li>
+            <li> <Link href="/contact"><a>Contact Us</a></Link> </li>
           </ul>
         </div>
         <div>
           <h3> Services</h3>
           <ul>
-            <li> <Link href="/"><a className="">About Us</a></Link> </li>
-            <li> <Link href="/"><a className="">News &amp; Media</a></Link> </li>
-            <li> <Link href="/"><a className="">Terms &amp; Conditions</a></Link> </li>
-            <li> <Link href="/"><a className="">Privacy Policy</a></Link> </li>
-            <li> <Link href="/"><a className="">Career</a></Link> </li>
-            <li> <Link href="/"><a className="">Contact Us</a></Link> </li>
+            <li> <Link href="/service/Identity%20&%20Access%20Management"><a className="">Identity and Access Management</a></Link> </li>
+            <li> <Link href="/service/Cloud%20&%20On-Premises%20Security"><a> Cloud and on-premises security</a></Link> </li>
+            <li> <Link href="/service/General%20IT%20or%20Cybersecurity%20Consultancy"><a> General IT or Cybersecurity Consultancy</a></Link> </li>
+            {/* <li> <Link href="/service/Internship%20&%20IT%20Career%20Development"><a> Internship</a></Link> </li> */}
+            <li> <Link href="/service/Staff%20Training"><a> General Staff Training </a></Link> </li>
+            {/* <li> <Link href="/service/"><a> </a></Link> </li> */}
           </ul>
         </div>
         <div>
           <h3> Quick Links</h3>
           <ul>
-            <li> <Link href="/"><a className="">Home</a></Link> </li>
-            <li> <Link href="/"><a className="">Services</a></Link> </li>
-            <li> <Link href="/"><a className="">Contact Us</a></Link> </li>
-            <li> <Link href="/"><a className="">Privacy Policy</a></Link> </li>
-            <li> <Link href="/"><a className="">Career</a></Link> </li>
-            <li> <Link href="/"><a className="">Contact Us</a></Link> </li>
+            <li> <Link href="/"><a>Home</a></Link> </li>
+            <li> <Link href="/courses"><a>Courses</a></Link> </li>
+            <li> <Link href="/service"><a>Services</a></Link> </li>
+            <li> <Link href="/faqs"><a>FAQs</a></Link> </li>
+            <li> <Link href="/register"><a>Sign up</a></Link> </li>
+            <li> <Link href="/login"><a>Login</a></Link> </li>
           </ul>
         </div>
 
